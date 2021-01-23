@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import * as actions from '../actions';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
