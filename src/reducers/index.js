@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import { LOGIN, ADD_TO_CART, LOGOUT, REMOVE_FROM_CART } from '../actions/types';
 
 const reducer = (state = null, action) => {
-  debugger;
   switch (action.type) {
     case LOGIN:
       return action.payload ? { ...state, user: action.payload } : null;

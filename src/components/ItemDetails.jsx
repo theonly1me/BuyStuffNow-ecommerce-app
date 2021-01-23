@@ -15,7 +15,6 @@ const ItemDetails = props => {
       },
     },
   } = props;
-  console.log(item);
   const classes = useStyles;
   return (
     <Grid container className={classes.gridContainer}>

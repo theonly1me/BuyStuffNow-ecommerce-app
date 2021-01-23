@@ -63,7 +63,6 @@ const ShoppingCart = ({ state, removeFromCart }) => {
     (acc, cur) => (acc += +cur.price.slice(1) * +cur.quantity),
     0
   );
-  console.log(totalCost);
   const classes = useStyles();
   const itemList = renderItems(data, removeFromCart);
   return (
