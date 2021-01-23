@@ -7,8 +7,11 @@ import Login from './Login';
 import Footer from './Footer';
 
 import Header from './Header';
+import Free from './Free';
+import ItemDetails from './ItemDetails';
+import { connect } from 'react-redux';
 
-const App = () => {
+const App = ({ state }) => {
   return (
     <>
       <BrowserRouter>
@@ -17,12 +20,21 @@ const App = () => {
           <Route path="/" exact>
             <ShoppingList />
           </Route>
-          <Route path="/checkout" exact>
-            <ShoppingCart />
-          </Route>
+          {state?.shop?.user ? (
+            <Route path="/checkout" exact>
+              <ShoppingCart />
+            </Route>
+          ) : null}
           <Route path="/login" exact>
             <Login />
           </Route>
+          <Route path="/free" exact>
+            <Free />
+          </Route>
+          <Route
+            path="/details/:ID"
+            render={props => <ItemDetails {...props} />}
+          />
         </Container>
         <Footer />
       </BrowserRouter>
@@ -30,4 +42,6 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => ({ state });
+
+export default connect(mapStateToProps)(App);

@@ -26,7 +26,7 @@ const Footer = () => {
     <footer className={classes.footer}>
       <Container maxWidth="lg">
         <Typography variant="subtitle1" align="center" gutterBottom>
-          <span className={classes.colorText}> Made in 4 hours ⏰</span>
+          <span className={classes.colorText}> Made with ☕</span>
         </Typography>
         <Typography align="center">
           <IconButton

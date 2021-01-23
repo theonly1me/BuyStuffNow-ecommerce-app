@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
   headerButton: {
     margin: theme.spacing(2),
   },
-  shoppingList: {
+  gridContainer: {
     width: '100%',
     marginTop: 20,
   },
