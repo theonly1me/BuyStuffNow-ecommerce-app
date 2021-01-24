@@ -8,7 +8,6 @@ const reducer = (state = null, action) => {
     case LOGOUT:
       return null;
     case ADD_TO_CART: {
-      debugger;
       if (state) {
         if (state.cart) {
           const stateItem = state.cart.find(
@@ -30,7 +29,6 @@ const reducer = (state = null, action) => {
       return { ...state };
     }
     case REMOVE_FROM_CART: {
-      debugger;
       const item = action.payload;
       const index = state.cart.findIndex(el => el.id === item.id);
       if (state.cart[index].quantity) state.cart[index].quantity -= 1;
