@@ -8,13 +8,16 @@ const reducer = (state = null, action) => {
     case LOGOUT:
       return null;
     case ADD_TO_CART: {
+      debugger;
       if (state) {
         if (state.cart) {
           const stateItem = state.cart.find(
             item => item.id === action.payload.id
           );
-          if (stateItem) state.cart[stateItem.id - 1].quantity += 1;
-          else {
+          if (stateItem) {
+            const index = state.cart.findIndex(el => el.id === stateItem.id);
+            state.cart[index].quantity += 1;
+          } else {
             action.payload.quantity = 1;
             state.cart.push(action.payload);
           }
@@ -27,9 +30,10 @@ const reducer = (state = null, action) => {
       return { ...state };
     }
     case REMOVE_FROM_CART: {
+      debugger;
       const item = action.payload;
-      if (state.cart[item.id - 1].quantity)
-        state.cart[item.id - 1].quantity -= 1;
+      const index = state.cart.findIndex(el => el.id === item.id);
+      if (state.cart[index].quantity) state.cart[index].quantity -= 1;
       return { ...state };
     }
     default:

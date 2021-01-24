@@ -24,8 +24,8 @@ import useStyles from '../utils/styles';
 const renderItems = (data, removeFromCart) => {
   const checkoutList = data.map(item => {
     return item.quantity ? (
-      <>
-        <ListItem key={item.id}>
+      <React.Fragment key={item.id}>
+        <ListItem>
           <ListItemAvatar>
             <Avatar>
               <ItemIcon />
@@ -47,7 +47,7 @@ const renderItems = (data, removeFromCart) => {
           </ListItemSecondaryAction>
         </ListItem>
         <Divider />
-      </>
+      </React.Fragment>
     ) : null;
   });
 
